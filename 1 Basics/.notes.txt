@@ -1,0 +1,8 @@
+Create Project
+- go mod init [project name]
+
+Run Project
+- go run [file name]
+
+Build Project
+- go build
