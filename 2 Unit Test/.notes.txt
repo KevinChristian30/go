@@ -1,0 +1,12 @@
+Go has a package called testing
+
+Key Features
+
+testing.T
+- Struct for unit tests
+
+testing.M
+- Struct to manage lifecycle
+
+testing.B
+- Struct for benchmarking
