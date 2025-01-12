@@ -37,6 +37,15 @@ func sumAll(numbers ...int) int {
 	return total
 }
 
+// Function with Callback
+func functionalProgrammingMap(array []int, callback func(value int) int) []int {
+	var result []int
+	for i := 0; i < len(array); i++ {
+		result = append(result, callback(array[i]))
+	}
+	return result
+}
+
 func main() {
 	array := []int{
 		1, 2, 3, 4, 5,
@@ -49,4 +58,13 @@ func main() {
 	fmt.Println(firstName, lastName)
 
 	fmt.Println(sumAll(1, 2, 3, 4, 5))
+
+	// Storing function in variable
+	minAndMax2 := minAndMax
+	fmt.Println(minAndMax2(array))
+
+	// Call function with callback
+	fmt.Println(functionalProgrammingMap(array, func(value int) int {
+		return value * 2
+	}))
 }

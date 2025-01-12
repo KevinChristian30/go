@@ -8,4 +8,10 @@ func main() {
 
     fmt.Println("Integer:", intVal)  // Output: Integer: 42
     fmt.Println("Float:", floatVal)  // Output: Float: 42.0
+
+    // Type assertion
+    // Type assertion is used to convert an empty interface/any to a type
+    var result any = "Kevin"
+    var assertedResult = result.(string)
+    fmt.Println(assertedResult)
 }
