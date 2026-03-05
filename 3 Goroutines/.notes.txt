@@ -1,0 +1,35 @@
+1. Introduction to Parallel Programming
+    - Parallel Programming is solving a problem by splitting it up to smaller problems, and solving it at the same time.
+
+2. Process vs Thread
+    - A program execution is called a Process, while a Thread is a segment of the Process.
+
+3. Parallel vs Concurrency
+    - Different from Parallel which runs tasks at the same time, concurrency runs tasks in turns.
+    - In Parallel programming, we need a lot of threads, we don't need that much for concurrency.
+
+4. CPU Bound
+    - A lot of algorithms are written to only be executed by the CPU, the execution of the algorithm is bound to the CPU's speed.
+    - A CPU bound algorithm has no benefit for using concurrency programming, but can benefit from parallel programming.
+
+5. I/O Bound
+    - I/O bound is the opposite of CPU bound, where the algorithm is bound to the input and output devices used.
+    - For example: reading from files, databases, caches.
+    - Concurrency is more suited here since we can use the I/O waiting time to do other tasks.
+
+6. Goroutine
+    - A Goroutine is a 'lightweight thread' that is managed by the Go Runtime.
+    - A Goroutine is so light, usually about 2kb, way smaller than a thread.
+    - A Goroutine is run by the Go Scheduler inside a thread,
+        where the amount of threads is GOMAXPROCS (usually it is the amount of CPU core).
+
+7. Go Scheduler
+    - In Go Scheduler, we have multiple terminologies:
+        - G: Goroutine
+        - M: Thread (Machine)
+        - P: Processor
+    - A Goroutine runs on a Thread, a Thread runs on a Processor.
+    - When we create a Goroutine, it is inserted into a Queue.
+    - A Queue is bound to the Processor (Local Queue), there is also a Global Queue.
+    - A Threads gets the Goroutines from the Queue and executes it.
+    - If a Thread's local Queue is empty, it will get from the Global Queue and Local Queue from other Processors.
