@@ -33,3 +33,12 @@
     - A Queue is bound to the Processor (Local Queue), there is also a Global Queue.
     - A Threads gets the Goroutines from the Queue and executes it.
     - If a Thread's local Queue is empty, it will get from the Global Queue and Local Queue from other Processors.
+
+8. Channels
+    - A channel is a synchronous communication channel that can be used by goroutines.
+    - In a channel, there is a sender and a receiver, usually they are different goroutines.
+    - When we send data to a channel, the goroutine will be blocked until the data is received,
+        in that way, this is a blocking/synchronous operation.
+    - Channels are a good alternative approach to async await in other programming languages.
+    - A channel can only have 1 data, if we want to add another, we need to wait for the data inside the channel to be taken.
+    - A channel's data can be taken from one or many goroutine.
